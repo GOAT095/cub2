@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:22:22 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 16:28:44 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 20:57:45 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	draw_wall(t_game *game, int x, int bot, int top)
 	while (++y < bot)
 	{
 		text_y = (y + (game->ray[x].stip_height / 2) - (game->res_y / 2)) *
-			((float)game->tex[wall_face].width / game->ray[x].stip_height);
+			((double)game->tex[wall_face].width / game->ray[x].stip_height);
 		game->img.data[y * game->res_x + x] =
 			game->tex[wall_face].tex[(int)text_x][(int)text_y];
 	}

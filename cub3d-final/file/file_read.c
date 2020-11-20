@@ -6,24 +6,11 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:44 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 19:38:16 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 23:24:05 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-int		player_dir(char cord)
-{
-	if (cord == 'N')
-		return (270);
-	else if (cord == 'W')
-		return (180);
-	else if (cord == 'S')
-		return (90);
-	else if (cord == 'E')
-		return (0);
-	return (-1);
-}
 
 void	read_resolution(char *line, t_game *game)
 {
@@ -64,6 +51,29 @@ int		check_floor_ceilling(char **split)
 	return (1);
 }
 
+int		check_split(char **split)
+{
+	int		i;
+	int		j;
+	char	**split2;
+
+	i = 0;
+	j = 0;
+	while (split[i] != NULL)
+	{
+		j = 0;
+		split2 = ft_split(split[i], ' ');
+		while (split2[j] != NULL)
+		{
+			if (j > 0)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 int		read_floor_ceiling(char *line, t_game *game)
 {
 	char	**split;
@@ -74,6 +84,8 @@ int		read_floor_ceiling(char *line, t_game *game)
 	split = ft_split(line, ',');
 	if (check_floor_ceilling(split) == -1)
 		return (-1);
+	if (!check_split(split))
+		log_global_error("Unvalid floor color or missing next param 2", game);
 	r = ft_atoi(split[0]);
 	g = ft_atoi(split[1]);
 	b = ft_atoi(split[2]);

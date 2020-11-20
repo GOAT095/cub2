@@ -5,7 +5,7 @@ WE ./texture/redbrick.XPM
 EA ./texture/bluestone.XPM
 S ./texture/barrel.XPM
 
-F -255,110,1
+F 255,110,1
 C 135,206,235
 
 
