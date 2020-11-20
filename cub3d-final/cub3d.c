@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/27 11:43:12 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 17:26:49 by anassif          ###   ########.fr       */
+/*   Created: 2019/12/06 11:43:12 by anassif           #+#    #+#             */
+/*   Updated: 2020/11/20 19:12:14 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int				main(int ac, char **av)
 	t_game	*game;
 
 	if (ac < 2 || ac > 3)
-		log_global_error("number of argument should be 2 or 3", NULL);
+		log_global_error("arguments should be 2 or 3", NULL);
 	game = game_initialization();
 	read_file_game(av[1], (ac == 3 ? av[2] : "rerre"), game);
 	window_init(game, &game->img);

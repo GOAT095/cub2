@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:56 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:37:43 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 19:38:58 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,19 +90,19 @@ void	ft_compare(char *line, t_game *game)
 	if (*line == 'R')
 		read_resolution(line, game);
 	else if (line[0] == 'N' && line[1] == 'O')
-		game->tex[TEX_NO].path = read_path(&line[2]);
+		game->tex[TEX_NO].path = read_path(&line[2], game);
 	else if (line[0] == 'S' && line[1] == 'O')
-		game->tex[TEX_SO].path = read_path(&line[2]);
+		game->tex[TEX_SO].path = read_path(&line[2], game);
 	else if (line[0] == 'W' && line[1] == 'E')
-		game->tex[TEX_WE].path = read_path(&line[2]);
+		game->tex[TEX_WE].path = read_path(&line[2], game);
 	else if (line[0] == 'E' && line[1] == 'A')
-		game->tex[TEX_EA].path = read_path(&line[2]);
+		game->tex[TEX_EA].path = read_path(&line[2], game);
 	else if (line[0] == 'S')
-		game->tex[TEX_S].path = read_path(&line[1]);
+		game->tex[TEX_S].path = read_path(&line[1], game);
 	else if (*line == 'F')
-		game->f = read_floor_ceiling(&line[1]);
+		game->f = read_floor_ceiling(&line[1], game);
 	else if (*line == 'C')
-		game->c = read_floor_ceiling(&line[1]);
+		game->c = read_floor_ceiling(&line[1], game);
 }
 
 int		parse_file_game(int fd, char *line, t_game *game, char *file)

@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 17:27:29 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 19:38:32 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,11 +191,12 @@ float			deg_to_rad(float deg);
 float			rad_to_deg(float rad);
 void			create_bmp(t_game *game);
 int				player_dir(char cord);
-char			*read_path(char *line);
+char			*read_path(char *line, t_game *game);
 void			read_resolution(char *line, t_game *game);
 int				check_floor_ceilling(char **split);
-int				read_floor_ceiling(char *line);
+int				read_floor_ceiling(char *line, t_game *game);
 void			fill_4(int player, int i, int j, t_game *game);
 void			fill_3(int i, int j, t_game *game);
 void			fill_2(int fd, int i, int j, t_game *game);
+int				ft_isalpha(int c);
 #endif

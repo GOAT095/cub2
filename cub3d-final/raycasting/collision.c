@@ -6,11 +6,18 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:24:40 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:38:47 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 18:54:00 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int		ft_isalpha(int c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
+}
 
 int		is_sprite(t_map *map, float x, float y)
 {
