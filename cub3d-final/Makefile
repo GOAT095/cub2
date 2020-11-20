@@ -2,7 +2,7 @@ SRCS_cub3d = cub3d.c log_errors/error.c file/file_read2.c \
 ft_initialize.c keys_set.c file/file_check.c \
 file/file_read.c raycasting/cast.c \
 raycasting/wall.c helper/ft_math.c raycasting/player.c raycasting/texture.c raycasting/sprite.c \
-screan/takeimage.c helper/free.c raycasting/collision.c file/fill_map.c \
+screan/screenshot.c helper/free.c raycasting/collision.c file/fill_map.c \
 
 SRCS_libft = libft/ft_strdup.c libft/ft_substr.c libft/ft_strjoin.c libft/ft_putstr_fd.c \
 libft/ft_strlen.c libft/ft_strncmp.c libft/ft_strlcpy.c \

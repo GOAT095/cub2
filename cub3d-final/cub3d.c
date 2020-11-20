@@ -6,13 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 11:43:12 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 01:06:21 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 17:26:49 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int				loop_cub(t_game *game)
+int				loop_game(t_game *game)
 {
 	player_movement(&game->map, &game->player);
 	caste_all_ray(game, &game->player);
@@ -47,7 +47,7 @@ int				main(int ac, char **av)
 	init_player_on_map(&game->map, &game->player);
 	init_textute(game);
 	keys_set(game);
-	mlx_loop_hook(game->mlx_ptr, loop_cub, game);
+	mlx_loop_hook(game->mlx_ptr, loop_game, game);
 	if (game->save == 1)
 		create_bmp(game);
 	else

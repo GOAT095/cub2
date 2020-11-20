@@ -6,13 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:22:22 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 22:23:52 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 16:28:44 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_draw_wall(t_game *game, int x, int bot, int top)
+void	draw_wall(t_game *game, int x, int bot, int top)
 {
 	float	text_x;
 	float	text_y;
@@ -79,6 +79,6 @@ void	ft_reander_wall(t_game *game, t_player *player)
 		bot_pix = (bot_pix > game->res_y) ? game->res_y : bot_pix;
 		render_ceiling(game, i, top_pix);
 		render_floor(game, i, bot_pix);
-		ft_draw_wall(game, i, bot_pix, top_pix);
+		draw_wall(game, i, bot_pix, top_pix);
 	}
 }

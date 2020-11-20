@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   takeimage.c                                        :+:      :+:    :+:   */
+/*   screenshot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:25:13 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 01:04:42 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 17:27:47 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		create_bmp(t_game *game)
 	t_bitmap		bmp;
 	unsigned char	header[54];
 
-	loop_cub(game);
+	loop_game(game);
 	init_all_data(game, &bmp);
 	fd = open("image.bmp", O_RDWR | O_CREAT, 500);
 	set_header(header, &bmp);

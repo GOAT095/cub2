@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 01:18:16 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 17:27:29 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ void			check_game(t_game *game, t_map *map);
 void			read_file_game(char *file, char *save, t_game *game);
 int				parse_file_game(int fd, char *line, t_game *game, char *file);
 int				keys_set(t_game *game);
-int				loop_cub(t_game *game);
+int				loop_game(t_game *game);
 void			screen_shot(t_game *game);
 void			init_sprite(t_game *game, int x, int y);
 void			init_textute(t_game *game);
