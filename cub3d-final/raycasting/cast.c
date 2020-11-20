@@ -6,13 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:24:35 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 23:09:49 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 00:58:20 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	ray_hor(t_game *game, t_player *player, t_map *map, t_ray *ray)
+void	ray_hor(t_game *game, t_player *player, t_map *map, t_ray *ray)
 {
 	float y_intercept;
 	float x_intercept;
@@ -40,7 +40,7 @@ static void	ray_hor(t_game *game, t_player *player, t_map *map, t_ray *ray)
 	}
 }
 
-static void	ray_ver(t_game *game, t_player *player, t_map *map, t_ray *ray)
+void	ray_ver(t_game *game, t_player *player, t_map *map, t_ray *ray)
 {
 	float y_intercept;
 	float x_intercept;
@@ -68,7 +68,7 @@ static void	ray_ver(t_game *game, t_player *player, t_map *map, t_ray *ray)
 	}
 }
 
-static void	cast_ray(t_game *game, t_player *player, t_map *map, t_ray *ray)
+void	cast_ray(t_game *game, t_player *player, t_map *map, t_ray *ray)
 {
 	float	hor_x;
 	float	hor_y;
@@ -93,7 +93,7 @@ static void	cast_ray(t_game *game, t_player *player, t_map *map, t_ray *ray)
 	}
 }
 
-void		caste_all_ray(t_game *game, t_player *player)
+void	caste_all_ray(t_game *game, t_player *player)
 {
 	float	ray_angle;
 	int		id;

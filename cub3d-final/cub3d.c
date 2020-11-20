@@ -6,13 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 11:43:12 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:39:28 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 01:06:21 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		loop_cub3d(t_game *game)
+int				loop_cub(t_game *game)
 {
 	player_movement(&game->map, &game->player);
 	caste_all_ray(game, &game->player);
@@ -23,7 +23,7 @@ int		loop_cub3d(t_game *game)
 	return (0);
 }
 
-void	window_initialization(t_game *game, t_img *img)
+static	void	window_init(t_game *game, t_img *img)
 {
 	if (!(game->mlx_ptr = mlx_init()))
 		error_global(game);
@@ -35,7 +35,7 @@ void	window_initialization(t_game *game, t_img *img)
 	&img->size_l, &img->endian);
 }
 
-int		main(int ac, char **av)
+int				main(int ac, char **av)
 {
 	t_game	*game;
 
@@ -43,11 +43,11 @@ int		main(int ac, char **av)
 		log_global_error("number of argument should be 2 or 3", NULL);
 	game = game_initialization();
 	read_file_game(av[1], (ac == 3 ? av[2] : "rerre"), game);
-	window_initialization(game, &game->img);
+	window_init(game, &game->img);
 	init_player_on_map(&game->map, &game->player);
 	init_textute(game);
 	keys_set(game);
-	mlx_loop_hook(game->mlx_ptr, loop_cub3d, game);
+	mlx_loop_hook(game->mlx_ptr, loop_cub, game);
 	if (game->save == 1)
 		create_bmp(game);
 	else

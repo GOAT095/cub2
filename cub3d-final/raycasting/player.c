@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:24:46 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:38:53 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/20 01:18:46 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	player_acutal(t_map *map, t_player *player, float n_x, float n_y)
 	}
 }
 
-static void	player_movement_2(t_map *map, t_player *player, float walk_dir,
+static void	player_mov_2(t_map *map, t_player *player, float walk_dir,
 float straf)
 {
 	float	new_x;
@@ -81,5 +81,5 @@ void		player_movement(t_map *map, t_player *player)
 	player->rotate_angle += turn_dir * player->rotate_speed;
 	walk_dir *= player->move_speed;
 	straf *= (player->move_speed / STRAF_FACTOR);
-	player_movement_2(map, player, walk_dir, straf);
+	player_mov_2(map, player, walk_dir, straf);
 }

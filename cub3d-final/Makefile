@@ -4,10 +4,11 @@ file/file_read.c raycasting/cast.c \
 raycasting/wall.c helper/ft_math.c raycasting/player.c raycasting/texture.c raycasting/sprite.c \
 screan/takeimage.c helper/free.c raycasting/collision.c file/fill_map.c \
 
-SRCS_libft = libft/ft_strlen.c libft/ft_strncmp.c libft/ft_strlcpy.c \
+SRCS_libft = libft/ft_strdup.c libft/ft_substr.c libft/ft_strjoin.c libft/ft_putstr_fd.c \
+libft/ft_strlen.c libft/ft_strncmp.c libft/ft_strlcpy.c \
 libft/ft_isdigit.c libft/ft_putchar_fd.c libft/ft_strnstr.c libft/ft_atoi.c \
-libft/ft_strdup.c libft/ft_substr.c libft/ft_strjoin.c libft/ft_putstr_fd.c \
-libft/get_next_line.c libft/ft_strjoin_free.c  libft/ft_strchr.c libft/ft_split.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_strtrim.c\
+libft/get_next_line.c libft/ft_strjoin_free.c  libft/ft_strchr.c libft/ft_split.c \
+libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_strtrim.c\
 
 SRCS = ${SRCS_cub3d} ${SRCS_libft}
 
