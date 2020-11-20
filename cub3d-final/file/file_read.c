@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:44 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 23:24:05 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 00:44:47 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	read_resolution(char *line, t_game *game)
 
 	i = 1;
 	j = 0;
+	if (!check_numbers(line))
+		log_global_error("Resolution is to small or incorrect", game);
 	while (line[++j])
 	{
 		if (!(ft_isdigit(line[j])) && (line[j] != ' ' && line[j] != '\t'))

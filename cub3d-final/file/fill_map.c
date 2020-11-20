@@ -6,11 +6,26 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:11:06 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:37:55 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 00:45:08 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int		check_numbers(char *line)
+{
+	int		i;
+	char	**split;
+
+	i = 0;
+	split = ft_split(line, ' ');
+	while (split[i])
+		i++;
+	i -= 1;
+	if (i > 2)
+		return (0);
+	return (1);
+}
 
 void	fill_4(int player, int i, int j, t_game *game)
 {
