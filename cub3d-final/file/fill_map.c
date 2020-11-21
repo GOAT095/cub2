@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:11:06 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 00:45:08 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 18:40:47 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ int		check_numbers(char *line)
 		i++;
 	i -= 1;
 	if (i > 2)
+	{
+		free_split(split);
 		return (0);
+	}
+	free_split(split);
 	return (1);
 }
 

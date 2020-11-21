@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 00:45:39 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 17:09:44 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include <errno.h>
 # include <math.h>
 # include "../libft/libft.h"
-# define DEFAULT_X 2560
-# define DEFAULT_Y 1395
 # define MAP_GAME "012NSEW"
 # define PLAYER_INIT_POS "NSEW"
+# define DEFAULT_X 2560
+# define DEFAULT_Y 1395
 # define TILE_SIZE 1
 # define ESC 53
 # define UP 13

@@ -6,13 +6,13 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:06 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:37:04 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 17:17:45 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static t_map	map_initialization(void)
+t_map			map_initialization(void)
 {
 	t_map map;
 
@@ -24,7 +24,7 @@ static t_map	map_initialization(void)
 	return (map);
 }
 
-static t_player	player_initialization(void)
+t_player		player_initialization(void)
 {
 	t_player player;
 

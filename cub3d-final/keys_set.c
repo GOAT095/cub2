@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:15 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 18:54:33 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 18:35:56 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,8 @@ char		*read_path(char *line, t_game *game)
 	len = 0;
 	while (line[i] == ' ')
 		i++;
-	len = i;
-	while (line[len] && line[len] != ' ')
-		len++;
-	str = ft_substr(line, i, len);
-	i = i + len - 2;
-	while (line[++i])
-	{
-		if (ft_isalpha(line[i]) && (line[i] != ' ' && line[i] != '\t'))
-			log_global_error("path aint looking good", game);
-	}
+	if (!(str = ft_strtrim(line + i, " ")))
+		error_global(game);
 	return (str);
 }
 

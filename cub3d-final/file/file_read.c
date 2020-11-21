@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:44 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 00:44:47 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 19:09:46 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,14 @@ int		check_split(char **split)
 		while (split2[j] != NULL)
 		{
 			if (j > 0)
+			{
+				free_split(split2);
 				return (0);
+			}
 			j++;
 		}
 		i++;
+		free_split(split2);	
 	}
 	return (1);
 }
