@@ -1,6 +1,6 @@
 SRCS_cub3d = cub3d.c log_errors/error.c file/file_read2.c \
 ft_initialize.c keys_set.c file/file_check.c \
-file/file_read.c raycasting/cast.c \
+file/file_read.c raycasting/raycasting.c \
 raycasting/wall.c helper/math_functions.c raycasting/player.c raycasting/texture.c raycasting/sprite.c \
 screan/screenshot.c helper/free.c raycasting/collision.c file/fill_map.c \
 

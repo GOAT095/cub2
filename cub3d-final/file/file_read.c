@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:44 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 19:09:46 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/21 19:11:29 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		check_split(char **split)
 			j++;
 		}
 		i++;
-		free_split(split2);	
+		free_split(split2);
 	}
 	return (1);
 }
