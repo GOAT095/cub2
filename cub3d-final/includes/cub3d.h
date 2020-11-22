@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 17:09:44 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/22 17:07:35 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@
 # define DOWN 1
 # define RIGHT 2
 # define LEFT 0
-# define SPACE 49
-# define SHIFHT 257
 # define L_AROW 123
 # define R_AROW	124
 # define MOVE_SPEED 0.13
@@ -96,7 +94,7 @@ typedef struct	s_ray
 	int			is_vert;
 	int			face_ud;
 	int			face_lr;
-	int			stip_height;
+	int			strip_height;
 	int			wall_content;
 }				t_ray;
 

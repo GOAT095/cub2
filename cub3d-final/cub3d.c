@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:43:12 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 19:12:14 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/22 17:02:48 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static	void	window_init(t_game *game, t_img *img)
 	if (!(game->mlx_ptr = mlx_init()))
 		error_global(game);
 	if (!(game->win_ptr = mlx_new_window(game->mlx_ptr,
-		game->res_x, game->res_y, "cub3d")))
+		game->res_x, game->res_y, "cub3D")))
 		error_global(game);
 	img->img_ptr = mlx_new_image(game->mlx_ptr, game->res_x, game->res_y);
 	img->data = (int *)mlx_get_data_addr(img->img_ptr, &img->bpp,

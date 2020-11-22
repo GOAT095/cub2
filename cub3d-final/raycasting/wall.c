@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:22:22 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 20:57:45 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/22 17:05:26 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	draw_wall(t_game *game, int x, int bot, int top)
 	y = top - 1;
 	while (++y < bot)
 	{
-		text_y = (y + (game->ray[x].stip_height / 2) - (game->res_y / 2)) *
-			((double)game->tex[wall_face].width / game->ray[x].stip_height);
+		text_y = (y + (game->ray[x].strip_height / 2) - (game->res_y / 2)) *
+			((double)game->tex[wall_face].width / game->ray[x].strip_height);
 		game->img.data[y * game->res_x + x] =
 			game->tex[wall_face].tex[(int)text_x][(int)text_y];
 	}
@@ -71,11 +71,11 @@ void	ft_reander_wall(t_game *game, t_player *player)
 	{
 		per_dist = game->ray[i].dist *
 			cos(game->ray[i].angle - player->rotate_angle);
-		game->ray[i].stip_height = (TILE_SIZE / per_dist) *
+		game->ray[i].strip_height = (TILE_SIZE / per_dist) *
 			((game->res_x / 2) / (tan(game->fov / 2)));
-		top_pix = (game->res_y / 2) - (game->ray[i].stip_height / 2);
+		top_pix = (game->res_y / 2) - (game->ray[i].strip_height / 2);
 		top_pix = (top_pix < 0) ? 0 : top_pix;
-		bot_pix = (game->res_y / 2) + (game->ray[i].stip_height / 2);
+		bot_pix = (game->res_y / 2) + (game->ray[i].strip_height / 2);
 		bot_pix = (bot_pix > game->res_y) ? game->res_y : bot_pix;
 		render_ceiling(game, i, top_pix);
 		render_floor(game, i, bot_pix);

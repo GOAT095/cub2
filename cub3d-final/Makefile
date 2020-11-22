@@ -16,7 +16,7 @@ INCL = -Iincludes/
 
 OBJS = ${SRCS:.c=.o}
 
-NAME = Cub3D
+NAME = cub3D
 
 FLAGS = -Wall -Wextra -Werror -g
 
