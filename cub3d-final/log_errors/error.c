@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:24:22 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/19 18:38:33 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/22 19:33:33 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	log_global_error(char *s, t_game *game)
 {
+	ft_putstr_fd("\033[1;31mERROR\n", 2);
 	ft_putstr_fd(s, 2);
 	ft_putstr_fd("\n", 2);
 	if (game)

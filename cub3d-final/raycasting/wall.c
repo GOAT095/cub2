@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:22:22 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/22 17:05:26 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/22 18:50:51 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ void	ft_reander_wall(t_game *game, t_player *player)
 	int		i;
 	int		top_pix;
 	int		bot_pix;
-	float	per_dist;
+	float	plane_dist;
 
 	i = -1;
 	while (++i < game->res_x)
 	{
-		per_dist = game->ray[i].dist *
+		plane_dist = game->ray[i].dist *
 			cos(game->ray[i].angle - player->rotate_angle);
-		game->ray[i].strip_height = (TILE_SIZE / per_dist) *
+		game->ray[i].strip_height = (TILE_SIZE / plane_dist) *
 			((game->res_x / 2) / (tan(game->fov / 2)));
 		top_pix = (game->res_y / 2) - (game->ray[i].strip_height / 2);
 		top_pix = (top_pix < 0) ? 0 : top_pix;

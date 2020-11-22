@@ -24,7 +24,7 @@ all : $(NAME)
 		@echo "successfully made :-)"
 
 $(NAME) : ${OBJS}
-		gcc  ${FLAGS} -I/usr/local/include -o$(NAME) ${OBJS} -L/usr/local/lib -lmlx -framework Opengl -framework APPKIT
+		gcc  ${FLAGS} -I/usr/local/include -o$(NAME) ${OBJS} -L/usr/local/lib -lmlx -framework Opengl -framework APPKIT 
 
 .c.o : ${SRCS}
 		gcc ${FLAGS} -c ${INCL} $< -o ${<:.c=.o}
