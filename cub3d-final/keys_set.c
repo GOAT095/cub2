@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:15 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 18:35:56 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 22:49:59 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char		*read_path(char *line, t_game *game)
 		i++;
 	if (!(str = ft_strtrim(line + i, " ")))
 		error_global(game);
+	game->params++;
 	return (str);
 }
 

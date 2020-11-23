@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:56 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/20 19:38:58 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 22:54:13 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ void	ft_compare(char *line, t_game *game)
 		game->f = read_floor_ceiling(&line[1], game);
 	else if (*line == 'C')
 		game->c = read_floor_ceiling(&line[1], game);
+	if (game->params > 8)
+		log_global_error("there is a duplicate paremetre", game);
 }
 
 int		parse_file_game(int fd, char *line, t_game *game, char *file)

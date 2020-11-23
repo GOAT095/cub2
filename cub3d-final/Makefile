@@ -12,7 +12,7 @@ utils/ft_memcmp.c utils/ft_memcpy.c utils/ft_strtrim.c\
 
 SRCS = ${SRCS_cub3d} ${SRCS_utils}
 
-INCL = -I includes/
+INCL = -Iincludes/
 
 OBJS = ${SRCS:.c=.o}
 
@@ -24,17 +24,17 @@ all : $(NAME)
 		@echo "successfully made :-)"
 
 $(NAME) : ${OBJS}
-		gcc  ${FLAGS} -I/usr/local/include -o$(NAME) ${OBJS} -L/usr/local/lib -lmlx -framework Opengl -framework APPKIT 
+		@gcc  ${FLAGS} -I/usr/local/include -o$(NAME) ${OBJS} -L/usr/local/lib -lmlx -framework Opengl -framework APPKIT 
 
 .c.o : ${SRCS}
-		gcc ${FLAGS} -c ${INCL} $< -o ${<:.c=.o}
+		@gcc ${FLAGS} -c ${INCL} $< -o ${<:.c=.o}
 clean :
-		rm -f ${OBJS}
+		@rm -f ${OBJS}
 
 fclean : clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re : fclean
-		make all
+		@make all
 
 .PHONY: all clean fclean re

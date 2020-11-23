@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:43:12 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 18:23:36 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 22:26:12 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int				main(int ac, char **av)
 	if (ac < 2 || ac > 3)
 		log_global_error("arguments should be 2 or 3", NULL);
 	game = game_initialization();
-	read_file_game(av[1], (ac == 3 ? av[2] : "rerre"), game);
+	read_file_game(av[1], (ac == 3 ? av[2] : NULL), game);
 	window_init(game, &game->img);
 	init_player_on_map(&game->map, &game->player);
 	init_textute(game);

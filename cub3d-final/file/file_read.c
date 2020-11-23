@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:44 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 18:26:59 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 22:50:14 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	read_resolution(char *line, t_game *game)
 	while (ft_isdigit(line[i]))
 		i++;
 	game->res_y = ft_atoi(&line[i]);
+	game->params++;
 }
 
 int		check_floor_ceilling(char **split)
@@ -102,6 +103,7 @@ int		read_floor_ceiling(char *line, t_game *game)
 	if (r < 0 || g < 0 || b < 0)
 		return (-1);
 	free_split(split);
+	game->params++;
 	return ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
 }
 
@@ -115,8 +117,13 @@ void	read_file_game(char *file, char *param2, t_game *game)
 	i = 0;
 	if (!(ft_strnstr(file, ".cub", ft_strlen(file))))
 		log_global_error("extension is unvalid or wrong", game);
-	if (ft_strncmp(param2, s, 6) == 0 && ft_strlen(param2) == 6)
-		game->save = 1;
+	if (param2 != NULL)
+	{
+		if (ft_strncmp(param2, s, 6) == 0 && ft_strlen(param2) == 6)
+			game->save = 1;
+		else
+			log_global_error("param2 is wrong", game);
+	}
 	free(s);
 	s = NULL;
 	if (!(fd = open(file, O_RDONLY)))

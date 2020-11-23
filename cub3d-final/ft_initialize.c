@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:06 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 18:08:50 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 22:49:23 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ t_game			*game_initialization(void)
 	game->player = player_initialization();
 	game->fov = (FOV * (M_PI / 180));
 	game->save = 0;
+	game->params = 0;
 	return (game);
 }

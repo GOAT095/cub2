@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 18:26:15 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 22:49:05 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,7 @@ typedef struct	s_game
 	t_sprite		*sprite;
 	t_ray			ray[DEFAULT_X];
 	t_tex			tex[NB_TEXTURE];
+	int				params;
 }				t_game;
 
 void			check_game(t_game *game, t_map *map);
