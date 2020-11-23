@@ -6,11 +6,27 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:06 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 17:17:45 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 18:08:50 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int				check_comma(char *line)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (line[i])
+	{
+		if (line[i] == ',')
+			j++;
+		i++;
+	}
+	return (j);
+}
 
 t_map			map_initialization(void)
 {

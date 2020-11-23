@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:44 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 19:11:29 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 17:53:44 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ int		read_floor_ceiling(char *line, t_game *game)
 	int		b;
 
 	split = ft_split(line, ',');
+	if (check_comma(line) != 2)
+		log_global_error("Unvalid floor color or missing next param", game);
 	if (check_floor_ceilling(split) == -1)
 		return (-1);
 	if (!check_split(split))

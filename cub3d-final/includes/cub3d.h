@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/22 20:27:42 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 17:54:25 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,4 +198,5 @@ void			fill_2(int fd, int i, int j, t_game *game);
 int				ft_isalpha(int c);
 int				check_split(char **split);
 int				check_numbers(char *line);
+int				check_comma(char *line);
 #endif

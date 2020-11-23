@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:11:06 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/21 18:40:47 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 18:08:39 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ void	fill_3(int i, int j, t_game *game)
 		{
 			if (game->map.map[i][j] == ' ')
 				game->map.map[i][j] = '1';
+			if (!strchr(MAP_GAME, game->map.map[i][j])
+			&& game->map.map[i][j] != ' ')
+				log_global_error("map error", game);
 			j++;
 		}
 		i++;

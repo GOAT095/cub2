@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:34 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/22 19:34:32 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 18:07:14 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void		ft_print_map(t_game *game)
 
 int			round_check(int i, int j, t_game *game)
 {
-	if (!ft_strchr("SNEW012", game->map.map[i - 1][j])
-	|| !ft_strchr("SNEW012", game->map.map[i][j - 1])
-	|| !ft_strchr("SNEW012", game->map.map[i][j + 1])
-	|| !ft_strchr("SNEW012", game->map.map[i + 1][j]))
+	if (!ft_strchr(MAP_GAME, game->map.map[i - 1][j])
+	|| !ft_strchr(MAP_GAME, game->map.map[i][j - 1])
+	|| !ft_strchr(MAP_GAME, game->map.map[i][j + 1])
+	|| !ft_strchr(MAP_GAME, game->map.map[i + 1][j]))
 		return (1);
 	return (0);
 }
@@ -70,11 +70,10 @@ void		check_tex(t_game *game)
 
 void		check_game(t_game *game, t_map *map)
 {
-	if (game->res_x > DEFAULT_X || game->res_y > DEFAULT_Y)
-	{
+	if (game->res_x > DEFAULT_X)
 		game->res_x = DEFAULT_X;
+	if (game->res_y > DEFAULT_Y)
 		game->res_y = DEFAULT_Y;
-	}
 	check_tex(game);
 	if (game->res_x < 100 || game->res_y < 100)
 		log_global_error("Resolution is to small or incorrect", game);
