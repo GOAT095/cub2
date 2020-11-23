@@ -12,7 +12,7 @@ utils/ft_memcmp.c utils/ft_memcpy.c utils/ft_strtrim.c\
 
 SRCS = ${SRCS_cub3d} ${SRCS_utils}
 
-INCL = -Iincludes/
+INCL = -I includes/
 
 OBJS = ${SRCS:.c=.o}
 
