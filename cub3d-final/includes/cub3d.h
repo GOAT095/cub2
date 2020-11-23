@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 00:20:27 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 17:54:25 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/23 18:26:15 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <errno.h>
 # include <math.h>
-# include "../libft/libft.h"
+# include "../utils/libft.h"
 # define MAP_GAME "012NSEW"
 # define PLAYER_INIT_POS "NSEW"
 # define DEFAULT_X 2560
