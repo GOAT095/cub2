@@ -6,11 +6,23 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:34 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 22:31:14 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/25 00:00:23 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int			check_input(char *line)
+{
+	int i;
+
+	i = 0;
+	while (line[i] == ' ')
+		i++;
+	if (!ft_strchr("012NSWE ", line[i]))
+		return (0);
+	return (1);
+}
 
 int			ft_isallnumber(char *num)
 {
@@ -24,19 +36,6 @@ int			ft_isallnumber(char *num)
 		i++;
 	}
 	return (1);
-}
-
-void		ft_print_map(t_game *game)
-{
-	int i;
-
-	i = 0;
-	while (i < game->map.map_row)
-	{
-		ft_putstr_fd(game->map.map[i], 1);
-		ft_putstr_fd("\n", 1);
-		i++;
-	}
 }
 
 int			round_check(int i, int j, t_game *game)

@@ -1,14 +1,12 @@
 R 1200 1200
-
 NO ./texture/colorstone.XPM
 SO ./texture/w o od.XPM 
 WE ./texture/redbrick.XPm 
 EA ./texture/ bluestone.XPM
-S ./texture/barrel .XPM
 
+S ./texture/barrel .XPm
 F 255,112,  21
 C 0,0,0
-
 
                     1
                    1N1

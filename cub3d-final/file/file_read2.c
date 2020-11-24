@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 01:23:56 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/23 22:54:13 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/24 23:58:37 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	fill_map(char *file, int fd, int ret, t_game *game)
 	}
 	free(x);
 	fill_2(fd, i, j, game);
-	ft_print_map(game);
 	fill_3(i, j, game);
 }
 
@@ -103,8 +102,10 @@ void	ft_compare(char *line, t_game *game)
 		game->f = read_floor_ceiling(&line[1], game);
 	else if (*line == 'C')
 		game->c = read_floor_ceiling(&line[1], game);
+	else if (!check_input(line))
+		log_global_error("invalide paremetre", game);
 	if (game->params > 8)
-		log_global_error("there is a duplicate paremetre", game);
+		log_global_error("there is a duplicate paremeter", game);
 }
 
 int		parse_file_game(int fd, char *line, t_game *game, char *file)
@@ -126,5 +127,7 @@ int		parse_file_game(int fd, char *line, t_game *game, char *file)
 		free(line);
 	}
 	free(line);
+	if (ret == 0)
+		log_global_error("the cub file is empty !!!!!", game);
 	return (ret);
 }

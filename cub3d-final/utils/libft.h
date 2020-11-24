@@ -6,7 +6,7 @@
 /*   By: anassif <anassif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:51:16 by anassif           #+#    #+#             */
-/*   Updated: 2020/11/05 00:24:03 by anassif          ###   ########.fr       */
+/*   Updated: 2020/11/24 23:59:20 by anassif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 int				get_next_line(int fd, char **line);
 char			*ft_strchr(const char *s, int c);
-
+int				check_input(char *line);
 #endif
